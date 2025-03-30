@@ -1,19 +1,18 @@
 import './Button.css';
 
 import { useState } from 'react';
-//import { useSharedState } from '../MyContext';
+import { useSharedState } from '../MyContext';
 export const Button = () => {
-    // const { count, increment } = useSharedState()
-    const [state, setState] = useState(0);
+    const { count, increment } = useSharedState()
 
     return (
         <div>
             <button
                 id="click-btn"
                 className="shared-btn"
-                onClick={() => setState((s) => s + 1)}
+                onClick={increment}
                 >
-                hello world: {state}
+                hello world: {count}
             </button>
         </div>
     );
